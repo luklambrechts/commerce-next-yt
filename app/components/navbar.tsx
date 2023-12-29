@@ -44,8 +44,14 @@ export default function Navbar() {
           ))}
         </nav>
         <div className="flex divide-x border-r sm:border-l">
-          <Button className="flex flex-col gap-y-1.5 h-12 w-12 sm:w-20 md:h-24 md:w-24 rounded none">
+          <Button
+            variant={"outline"}
+            className="flex flex-col gap-y-1.5 h-12 w-12 sm:w-20 md:h-24 md:w-24 rounded none"
+          >
             <ShoppingBag />
+            <span className="hidden text font-semibold text-gray-500 sm:block">
+              Cart
+            </span>
           </Button>
         </div>
       </div>
