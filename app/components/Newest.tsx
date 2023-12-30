@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { simplifiedProduct } from "../interface";
 import { client } from "../lib/sanity";
 import Link from "next/link";
+import Image from "next/image";
 async function getData() {
   const query = `*[_type == 'product'][0...4] {
         _id,
@@ -12,6 +13,7 @@ async function getData() {
           "imageUrl": images[0].asset->url
       }`;
   const data = await client.fetch(query);
+  return data;
 }
 
 export default async function Newest() {
@@ -30,6 +32,21 @@ export default async function Newest() {
               <ArrowRight />
             </span>
           </Link>
+        </div>
+        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+          {data.map((product) => (
+            <div key={product._id}>
+              <div>
+                <Image
+                  src={product.imageUrl}
+                  alt="product.image"
+                  className="w-full h-full object-center object-cover lg:h-full lg:w-full"
+                  width={300}
+                  height={300}
+                ></Image>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
