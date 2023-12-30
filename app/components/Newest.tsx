@@ -1,5 +1,7 @@
+import { ArrowRight } from "lucide-react";
 import { simplifiedProduct } from "../interface";
 import { client } from "../lib/sanity";
+import Link from "next/link";
 async function getData() {
   const query = `*[_type == 'product'][0...4] {
         _id,
@@ -22,7 +24,12 @@ export default async function Newest() {
           <h2 className="text-2xl font-bold tracking-tight text-gray-900">
             Our Newest products
           </h2>
-          <link href="/all">See all</link>
+          <Link className="text-primary flex items-center gap-x-1" href="/all">
+            See all
+            <span>
+              <ArrowRight />
+            </span>
+          </Link>
         </div>
       </div>
     </div>
