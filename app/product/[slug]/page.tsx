@@ -13,6 +13,7 @@ async function getData(slug: string) {
           "categoryName": category->name
       }`;
   const data = await client.fetch(query);
+  console.log(data.images);
   return data;
 }
 export default async function ProductPage({
