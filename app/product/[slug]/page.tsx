@@ -1,9 +1,9 @@
 import { client } from "@/app/lib/sanity";
-import { fullProduct } from "../interface.ts";
-import ImageGallery from "@/app/components/ImageGallery.jsx";
+import { fullProduct } from "@/app/interface";
+import ImageGallery from "@/app/components/ImageGallery";
 
 async function getData(slug: string) {
-  const query = `*[_type == "product" && slug.current == "${slug}"[0] {
+  const query = `*[_type == "product" && slug.current == "${slug}"][0] {
         _id,
           images,
           price,
