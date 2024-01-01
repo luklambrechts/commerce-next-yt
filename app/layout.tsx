@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "./components/navBar";
 import CartProvider from "./components/Providers";
+import ShoppingCartModal from "./components/ShoppingCartModal";
+import { ShoppingCart } from "lucide-react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,10 +23,10 @@ export default function RootLayout({
       <body className={inter.className}>
         <CartProvider>
           <NavBar></NavBar>
+          <ShoppingCartModal />
           {children}
         </CartProvider>
         <NavBar />
-        {children}
       </body>
     </html>
   );

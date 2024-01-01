@@ -1,3 +1,4 @@
+"use client";
 import { CartProvider as USCProvider } from "use-shopping-cart";
 export default function CartProvider({
   children,
