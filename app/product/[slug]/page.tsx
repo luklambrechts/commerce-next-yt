@@ -2,7 +2,7 @@ import { client } from "@/app/lib/sanity";
 import { fullProduct } from "@/app/interface";
 import ImageGallery from "@/app/components/ImageGallery";
 import { Button } from "@/components/ui/button";
-import { Star } from "lucide-react";
+import { Star, Truck } from "lucide-react";
 
 async function getData(slug: string) {
   const query = `*[_type == "product" && slug.current == "${slug}"][0] {
@@ -63,6 +63,18 @@ export default async function ProductPage({
             <span className="text-sm text-gray-500">
               Incl. Vat plus shipping
             </span>
+            <div className="mb-6 flex items-center gap-2 text-gray-500">
+              <Truck className="w-6 h-6"></Truck>
+              <span className="text-sm">2-4 Day shipping</span>
+            </div>
+
+            <div className="flex gap-2.5">
+              <Button>Add To Bag</Button>
+              <Button variant={"secondary"}>Checkout now</Button>
+            </div>
+            <p className="mt-12 text-base text-gray-500 tracking-wide">
+              {data.description}
+            </p>
           </div>
         </div>
       </div>

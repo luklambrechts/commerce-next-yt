@@ -14,4 +14,5 @@ export interface fullProduct {
   slug: string;
   categoryName: string;
   name: string;
+  description: string;
 }
