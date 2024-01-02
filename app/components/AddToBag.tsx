@@ -18,7 +18,7 @@ export default function AddToBag({
   name,
   price,
 }: ProductCart) {
-  const { addItem, handleCartClick } = useShoppingCart();
+  const { addItem, handleCartClick, cartDetails } = useShoppingCart();
   const product = {
     name,
     description,
