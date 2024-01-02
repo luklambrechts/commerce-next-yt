@@ -6,8 +6,10 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { useShoppingCart } from "use-shopping-cart";
+import Image from "next/image";
 export default function ShoppingCartModal() {
-  const { cartCount, shouldDisplayCart, handleCartClick } = useShoppingCart();
+  const { cartCount, shouldDisplayCart, handleCartClick, cartDetails } =
+    useShoppingCart();
   return (
     <Sheet open={shouldDisplayCart} onOpenChange={() => handleCartClick()}>
       <SheetContent className="sm:max-w-lg w-[90vw]">
@@ -20,7 +22,20 @@ export default function ShoppingCartModal() {
             {cartCount === 0 ? (
               <h1 className="py-6">You dont have any items</h1>
             ) : (
-              <h1>hey you have some items</h1>
+              <>
+                {Object.values(cartDetails ?? {}).map((entry) => (
+                  <li key={entry.id} className="flex-py-6">
+                    <div>
+                      <Image
+                        src={entry.image as string}
+                        alt="Product Image"
+                        width={100}
+                        height={100}
+                      />
+                    </div>
+                  </li>
+                ))}
+              </>
             )}
           </div>
         </div>
