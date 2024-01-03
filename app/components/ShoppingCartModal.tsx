@@ -77,9 +77,22 @@ export default function ShoppingCartModal() {
               <p>${totalPrice}</p>
             </div>
             <p>Shipping and taxes are calculated at checkout.</p>
-
             <div className="mt-6">
               <Button className="w-full">Checkout</Button>
+            </div>
+
+            <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
+              <p>
+                Or
+                <button
+                  onClick={() => {
+                    handleCartClick();
+                  }}
+                  className="font-medium text-primary hover:text-primary/80"
+                >
+                  Continue Shopping
+                </button>
+              </p>
             </div>
           </div>
         </div>
