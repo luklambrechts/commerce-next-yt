@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import NavBar from "./components/navBar";
+import NavBar from "./components/NavBar";
 import CartProvider from "./components/Providers";
 import ShoppingCartModal from "./components/ShoppingCartModal";
 import { ShoppingCart } from "lucide-react";
