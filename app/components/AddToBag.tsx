@@ -28,12 +28,13 @@ export default function AddToBag({
     currency,
     image: urlFor(image).url(),
     price_id: price_id,
-    id: "sldmjflsdjf",
   };
+  console.log(product);
+  console.log("---");
   return (
     <Button
       onClick={() => {
-        addItem(product, handleCartClick());
+        addItem(product), handleCartClick();
       }}
     >
       Add To Cart
