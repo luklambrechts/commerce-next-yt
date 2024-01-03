@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/sheet";
 import { useShoppingCart } from "use-shopping-cart";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 export default function ShoppingCartModal() {
   const {
     cartCount,
@@ -74,6 +75,11 @@ export default function ShoppingCartModal() {
             <div className="flex justify-between text-base font-medium text-gray-900">
               <p>Subtotal</p>
               <p>${totalPrice}</p>
+            </div>
+            <p>Shipping and taxes are calculated at checkout.</p>
+
+            <div className="mt-6">
+              <Button className="w-full">Checkout</Button>
             </div>
           </div>
         </div>
