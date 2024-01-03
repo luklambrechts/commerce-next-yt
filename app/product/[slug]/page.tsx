@@ -76,6 +76,7 @@ export default async function ProductPage({
                 image={data.images[0]}
                 name={data.name}
                 price={data.price}
+                price_id={data.price_id}
               />
               <Button variant={"secondary"}>Checkout now</Button>
             </div>
