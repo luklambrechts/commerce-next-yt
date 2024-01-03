@@ -13,9 +13,11 @@ export default function CheckoutNow({
   price_id,
 }: ProductCart) {
   const { checkoutSingleItem } = useShoppingCart();
+
   function buyNow(priceId: string) {
     checkoutSingleItem(priceId);
   }
+
   const product = {
     name,
     description,
@@ -23,12 +25,13 @@ export default function CheckoutNow({
     currency,
     image: urlFor(image).url(),
     price_id: price_id,
-    id: "sldmjflsdjf",
   };
+  console.log(product);
+  console.log("---");
   return (
     <Button
       onClick={() => {
-        buyNow(product.price_id);
+        buyNow(price_id);
       }}
     >
       Add To Cart
