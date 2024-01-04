@@ -23,6 +23,8 @@ export default function ShoppingCartModal() {
     event.preventDefault();
     try {
       const result = await redirectToCheckout();
+      console.log("--result---");
+      console.log(result);
       if (result?.error) {
         console.log("result");
       }
