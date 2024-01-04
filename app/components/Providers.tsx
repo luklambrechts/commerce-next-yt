@@ -10,8 +10,8 @@ export default function CartProvider({
       mode="payment"
       cartMode="client-only"
       stripe={process.env.NEXT_PUBLIC_STRIPE_KEY as string}
-      successUrl="commerce-next-yt.vercel.app/stripe/success"
-      cancelUrl="commerce-next-yt.vercel.app/stripe/error"
+      successUrl="http://commerce-next-yt.vercel.app/stripe/success"
+      cancelUrl="http://commerce-next-yt.vercel.app/stripe/error"
       currency="USD"
       billingAddressCollection={true}
       shouldPersist={true}
