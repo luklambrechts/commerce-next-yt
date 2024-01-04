@@ -30,11 +30,12 @@ export default function CheckoutNow({
   console.log("---");
   return (
     <Button
+      variant="outline"
       onClick={() => {
         buyNow(price_id);
       }}
     >
-      Add To Cart
+      Checkout Now
     </Button>
   );
 }
